@@ -4,10 +4,11 @@
   "description": "test methodologies",
   "main": "index.js",
   "dependencies": {
-    "node": "^13.12.0",
+    "node": "^13.12.0"
+  },
+  "devDependencies": {
     "node-sass": "^4.13.1"
   },
-  "devDependencies": {},
   "scripts": {
     "compile:sass": "node-sass sass/main.scss css/style.css -w"
   },

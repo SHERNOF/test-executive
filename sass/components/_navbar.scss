@@ -1,0 +1,15 @@
+.navbar {
+    visibility: hidden;
+    
+    &-nav {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        text-align: right;
+    }
+
+    &-right{
+     font-size: 2rem;   
+    }
+}
+

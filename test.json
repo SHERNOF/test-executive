@@ -1,0 +1,559 @@
+[
+
+{
+	"id": 1,
+    "testDescription": "Configuration Test",
+    "descriptionContent": 
+    
+    [
+    "Test Type - This test will write and/or verify the device’s configuration information (serial number, MAC Address, part number, hardware revisions, firmware revisions etc.) on the unit under test.",    
+    " ",
+    "-- Strategy --",
+
+    "1. Write or verify the serial number, focus distance, part number, and revision information",
+    "2. Write EEPROM information to the IO board",
+    "3. Verify any required hardware versions",
+    "4. Verify firmware versions",
+    " ",
+    "-- Lofile Definition --",
+   
+    "1. As per name Configuration, this test basically setup, configure and or update the UUT prior to full focus or functional test",
+    "2. Lines 1 - 7; TE3 captures the information from the barcode label of the UUT. Normally the Serial Number, MAC Address PArt Number and Revision", 
+    "3. Lines 8 - 22; TE3 captures the internal characteristics of the UUT. It involves the checking of the diags failsafe and apploader version. If any of the diags version is not similar to what is expected, tester will update it",
+    "4. Lines 23 - 28; is the actual comparison or test of the SN, PN and Rev and its MAC Address between the label and of from the EEPROM",
+    "5. Lines 29 - 35; is the actual comparison of the internal diags content of the UUT vs the expected",
+    "6. Lines 23 - 35; typically is the test, pass fail result will be coming from these steps"
+    ],
+
+    "disp": { "location": "img/configuration/configuration.JPG" },
+
+    "failureContents": 
+    [
+        {
+            "failureName": "1. Unable to read the UUT label",
+            "failureDescription":  "As failure Description",
+            "failureCause": 
+            [
+                "1. UUT is not sitting properly on the nest.",
+                "2. Check the label quality",
+                "3. alignment and lighting of the scanner is not optimize (alert Jamal, Sherwin / Kun if this is the case)"
+            ],
+            "failureCarousel": "img/default/default1.jpg",
+            "failureLabel": "The ID reader is unable to read the UUT label",
+            "failureImage": "img/default/default3.png"
+        },
+
+        {
+            "failureName": "2. Part Number mismatch Actual",
+            "failureDescription":  "As failure Description",
+            "failureCause":  
+            [
+                "The Technician Wrongly choose the part number"
+            ],
+            "failureCarousel": "img/default/default.jpg",
+            "failureLabel": "Part Number mismatch",
+            "failureImage": "img/default/default3.png"
+        },
+
+        {
+            "failureName": "3. Can't Read Label - Lid Open",
+            "failureDescription":  "As failure Description",
+            "failureCause":  
+            [
+                "Tester's hood is open, LID switch is broken or was not activated"
+            ],
+            "failureCarousel": "img/default/default1.jpg",
+            "failureLabel": "Can't Read Label - Lid Open",
+            "failureImage": "img/default/default1.jpg"
+        },
+
+        {
+            "failureName": "4. Mac Address mismatch Actual",
+            "failureDescription":  "As failure Description",
+            "failureCause":  
+            [
+                "The UUT most probably has a different MAC Address programmed in its EEPROM. Can be solve by JTAG erasure"
+            ],
+            "failureCarousel": "img/default/default1.jpg",
+            "failureLabel": "Mac Address mismatch Actual",
+            "failureImage": "img/default/default.jpg"
+        }
+    ]
+},
+
+{
+    "id": 2,
+    "testDescription": "Sensor Data Path",
+    "descriptionContent": 
+    
+    [
+        "This test step will verify that none of the imager data lines are open/shorted.",
+        " ",
+        "-- Strategy --",
+        
+        "a. Turn on wedge (linear gradient) pattern",
+        "b. Acquire and transfer an image to the test PC",
+        "c. Verify 8-bit data using histogram tool",
+        "d. Pass or fail the unit depending on the results"
+
+    ],
+
+    "disp": { "location": "img/sdp/sensor.JPG" },
+
+    "failureContents": 
+    [
+        {
+            "failureName": "1. Error in Sensor Data Path",
+            "failureDescription":  "The image captured by the imager is not as expected",
+            "failureCause": 
+            [
+                "1. Probably unit issue",
+                "2. If it is a new model, most probably the type of sensor path image is set wrongly (normal or walking Ones). Call Kun or Sherwin for this kind of issue"
+                
+            ],
+            "failureCarousel": "img/sdp/errorInSensorDataPath.JPG",
+            "failureLabel": "Error in sensor data path. Unexpected bin value. See image for details.",
+            "failureImage": "img/sdp/errorInSensorDataPath.JPG"
+        },
+
+        {
+            "failureName": "2. The operation has timed out.",
+            "failureDescription":  "The sensor data path test suddenly stops",
+            "failureCause":  
+            [
+                "Probably UUT issue"
+            ],
+            "failureCarousel": "img/sdp/operationHasTimedOut.JPG",
+            "failureLabel": "The operation has timed out.  Writing test function status...X",
+            "failureImage": "img/sdp/operationHasTimedOut.JPG"
+        },
+        {
+            "failureName": "3. The I/O operation has been aborted",
+            "failureDescription":  "The sensor data path test suddenly stops",
+            "failureCause":  
+            [
+                "Probably UUT issue"
+            ],
+            "failureCarousel": "img/sdp/IoOperationHasBeenAborted.JPG",
+            "failureLabel": "The I/O operation has been aborted",
+            "failureImage": "img/sdp/IoOperationHasBeenAborted.JPG"
+        },
+        {
+            "failureName": "4. Number Of Pixels With Pel Value 255 mismatch",
+            "failureDescription":  "This test expects that a bright white 255PEL image is to be evaluated. In this case, the image evaluated is also at 255PEL value but TE3 still failed it",
+            "failureCause":  
+            [
+                "If the image at 255 test is also white, then it's most probably false failure."
+            ],
+            "failureCarousel": "img/sdp/NumberOfPixelsWithPelValue255mismatch.JPG",
+            "failureLabel": "Number Of Pixels With Pel Value 255 mismatch",
+            "failureImage": "img/sdp/NumberOfPixelsWithPelValue255mismatch2.JPG"
+        }
+    ]
+},
+
+{
+    "id": 3,
+    "testDescription": "Debris",
+    "descriptionContent": 
+    
+    [
+        "Test Type - This test step will verify that the optical path of the unit under test is clean and free of debris. The test fixture will have appropriate hardware necessary to preform a course search to detect debris.",
+        "1. This test for the quality of the imager. TE fires the engine and examines the surfwace of the imager. A light plate is use to display the surface of the Imager. An image produce and Test Executive analyze and check if there's a presence of blob. 0 blob is allowed in this test.",
+        "2. This test step will verify that the optical path of the unit under test is clean and free of debris. The test fixture will have appropriate hardware necessary to perform a course search to detect debris.",
+        " ",
+        "-- Strategy --",
+        "a. Acquire and transfer an image to the test PC",
+        "b. Run CVL vision job on the acquired image to detect debris",
+        "c. Pass or fail the unit depending on the result"
+
+    ],
+
+    "disp": { "location": "img/debris/debris.JPG" },
+
+    "failureContents": 
+    [
+        {
+            "failureName": "1. Blob count out of range",
+            "failureDescription":  "There's a presence of blob on the imager.",
+            "failureCause": 
+            [
+                "Presence of foreign material on the imager or light plate.",
+                "Material problem is also a cause."
+            ],
+            "failureCarousel": "img/debris/blobOutOfRange.JPG",
+            "failureLabel": "Blob out of Range",
+            "failureImage": "img/debris/blobOutOfRange.JPG"
+        },
+
+        {
+            "failureName": "2. Could not move lens to desired position",
+            "failureDescription":  "Test executive utilize the digimatic to set the starting position of the lens. This failure means that the desired starting position was not attained by the gripper and the lens",
+            "failureCause":  
+            [
+                "1. This happens if the lens is not set property into the gripper, it will not rotate well and it will end up failing if it did not reach the desired starting position.",
+                " ",
+                "2. Look at the gripper lip if the rubbers are worn out.",
+                " ",
+                "3. Look at the gripper finger if deformed "
+            ],
+            "failureCarousel": "img/debris/cnml.JPG ",
+            "failureLabel": "Could not move lens to desired position",
+            "failureImage": "img/debris/cnml.JPG"
+        },
+        {
+            "failureName": "3. Unexpected Focus Lock Piston Position",
+            "failureDescription":  "TE3 detected that the piston is not in the correct position, saying piston position is \"unknown\". It's either, it did not swing, the switch is defective or it swings but it did not reach the switch because of insufficient air",
+            "failureCause":  
+            [
+                "1. Switch is broken or was not activated.",
+                "2. Check the air supply for leak or no supply at all"
+            ],
+            "failureCarousel": "img/focus/unexpectedRotaryTargetPiston.JPG",
+            "failureLabel": "Unexpected Rotary Target Piston Position",
+            "failureImage": "img/focus/unexpectedRotaryTargetPiston.JPG"
+        }
+    ]
+},
+
+
+{
+	"id": 4,
+    "testDescription": "Image Acquire",
+    "descriptionContent": 
+    [
+        "This test will verify that the unit under test will complete an image acquisition.",
+        "It functionally test the capability of the imager to capture image. Base fom experience, the UUT will still pass if the window of the lens is covered. Yes because it still captures and produce a black image",
+        "Notable History: Low yield encountered because of Image Acquire Failure in the initial run of RoadRunner (Final Test). It seems that some driver or part of an OS is causing the false failure. The issue was resolved after PC replacement",
+        " ",
+        "-- Strategy --",
+        "a. Acquire and transfer an image to the test PC",
+        "b. Run histogram on acquired image to verify image is reasonable (not all black, all white, etc.)",
+        "c. Fail unit under test if image doesn’t acquire, or image is unreasonable"
+
+    ],
+
+    "disp": { "location": "img/imageAcquire/imageAcquire.JPG" },
+
+    "failureContents": 
+    [
+        {
+            "failureName": "1. The operation has timed out.  Writing test function status...X",
+            "failureDescription":  "The Image acquire test suddenly stops",
+            "failureCause": 
+            [
+                "Probably unit issue",
+                "Flex can be also a cause of issue"
+            ],
+            "failureCarousel": "img/imageAcquire/operationHasTimedOut.JPG",
+            "failureLabel": "The operation has timed out.  Writing test function status...X",
+            "failureImage": "img/imageAcquire/operationHasTimedOut.JPG"
+        },
+
+        {
+            "failureName": "2. Status returned [1]",
+            "failureDescription":  "The Image acquire test suddenly stops",
+            "failureCause":  
+            [
+                "Probably unit issue",
+                "Flex can be also a cause of issue"
+            ],
+            "failureCarousel": "img/imageAcquire/statusReturn.JPG",
+            "failureLabel": " Status returned [1]",
+            "failureImage": "img/imageAcquire/statusReturn.JPG"
+        }
+    ]
+},
+
+{
+	"id": 5,
+    "testDescription": "Cold Pixel",
+    "descriptionContent": 
+    [
+        "- This test step will verify that the sensor of the unit under test has no cold pixels or cold pixel clusters (dark pixels on a light background). If pixel correction is required, the test will locate and retain the location of each cold pixel and/ or cold pixel cluster.",
+        "- TE3 will expect and evaluate a bright white about to 255 PEL image allowing (x) white pixel on its surface",
+        " ",
+        "-- Strategy --",
+        "a. Supply diffuse light to the unit under test",
+        "b. Acquire an image and transfer it to the test PC",
+        "c. Run an algorithm to detect Cold pixels and Cold pixel clusters",
+        "d. Pass or fail the unit depending on the results."
+
+    ],
+
+    "disp": { "location": "img/coldPixel/1coldPixel.JPG" },
+
+    "failureContents": 
+
+    [
+        {
+            "failureName": "1.The bad pixel count (x) exceeds the number of allowable bad pixels (y).",
+            "failureDescription":  "There's a spot on the imager",
+            "failureCause": 
+            [
+                "Imager issue",
+                "Assembly issue that brings shadow in the corners of the image",
+                "ROI issue"
+            ],
+            "failureCarousel": "img/coldPixel/1coldPixel.JPG",
+            "failureLabel": "The bad pixel count exceeds",
+            "failureImage": "img/coldPixel/coldPixel.JPG"
+        },
+
+        {
+            "failureName": "2. The histogram mean is out of range.",
+            "failureDescription":  "The image evaluated is black (not white) with almost 0 PEL value",
+            "failureCause":  
+            [
+                "UUT issue"
+                
+            ],
+            "failureCarousel": "img/coldPixel/histogramIsOutOfRange.JPG",
+            "failureLabel": "The histogram mean is out of range.",
+            "failureImage": "img/coldPixel/histogramIsOutOfRange.JPG"
+        }
+    ]
+},
+
+{
+    "id": 6,
+    "testDescription": "Hot Pixel Test",
+    "descriptionContent": 
+    [
+    "- This test step will verify that the sensor of the unit under test has no hot pixels or hot pixel clusters (light pixels on a dark background). If pixel correction is required, the test will locate and retain the location of each hot pixel and/ or hot pixel cluster.",
+    "- TE3 will expect and evaluate a dark about to 0 PEL image allowing 20 white pixel on its surface",
+    " ",
+    "- TE3 will expect a white image to evaluate in this test",
+    " ",
+    "-- Strategy --",
+    "1. Isolate the unit under test from any light sources.",
+    "2. Acquire an image and transfer it to the test PC",
+    "3. Run an algorithm to detect hot pixels and hot pixel clusters",
+    "4. Pass or fail the unit depending on the results."
+    ],
+
+    "disp": { "location": "img/hotPixel/hotPixel.JPG" },
+
+    "failureContents": 
+    [
+
+
+        {
+            "failureName": "1. The I/O operation has been aborted",
+            "failureDescription":  "Hot Pixel test suddenly stops",
+            "failureCause": 
+            [
+                "1. False reject"
+            ],
+            "failureCarousel": "img/hotPixel/operationHasBeenAborted.JPG",
+            "failureLabel": "The I/O operation has been aborted",
+            "failureImage": "img/hotPixel/operationHasBeenAborted.JPG"
+        },
+
+        {
+            "failureName": "2. The bad pixel count (x) exceeds the number of allowable bad pixels (y).",
+            "failureDescription":  "The UUT failed as there's more than the required white pixel on the surface of the imager",
+            "failureCause":
+            [
+                "1. There's white pixel present on the imager above20 counts",
+                "2. Probably material issue",
+                "3. Probably foreign material on the surface of the imager"
+            ],
+            "failureCarousel": "img/hotPixel/exceeds.JPG",
+            "failureLabel": "The bad pixel count exceeds.",
+            "failureImage": "img/hotPixel/exceeds.JPG"
+        }
+    ]
+},
+{
+	"id": 7,
+    "testDescription": "Focus Test",
+    "descriptionContent": 
+    [
+    "This is the test that primarily involves the imager and lens. These two parts are tested for its capability to be focus and capture an image with reference to customer given specs. the lens is calibrated or focus base on customer's desired distance from the target..",
+    " ",
+    "The lens needs to be focused to a specific distance. This stage handles the process of rotating the lens, until an optimal sharpness of the image is recorded.",
+    " ",
+    "-- Strategy --",
+    "1. Move the target to specified distance",
+    "2. Move the lens to a known position",
+    "3. Perform standard focus algorithm",
+    "4. Pass or fail the unit depending on the results."
+
+
+    ],
+
+    "disp": { "location": "img/focus/focus.JPG" },
+
+    "failureContents": 
+    [
+
+
+        {
+            "failureName": "1. Not enough data points",
+            "failureDescription":  "The UUT reached the peak in a very fast manner. Can be fix by adjusting the starting position. Call Sherwin or Kun for the adjustment",
+            "failureCause": 
+            [
+                "1. Most probably need to optimize the starting position for new models (Contact Kun / Sherwin for this issue). If old model, it could be that the lens was not gripped properly by the gripper, or there's a mechanical issue with the gripper"
+            ],
+            "failureCarousel": "img/focus/notEnoughDataPoints.JPG",
+            "failureLabel": "Not enough data points",
+            "failureImage": "img/focus/notEnoughDataPoints.JPG"
+        },
+
+        {
+            "failureName": "2. Reach end of travel",
+            "failureDescription":  "The UUT did not manage to get its peak, it keeps on trying to focus until it reach the upper bound. Can be fix by adjusting the starting position. Call Sherwin or Kun for the adjustment",
+            "failureCause":
+            [
+                "1. Most probably need to optimize the starting position for new models 9Contact Kun / Sherwin for this issue). If old model, it could be that the lens was not gripped properly by the gripper, or there's a mechanical issue with the gripper"
+            ],
+            "failureCarousel": "img/focus/reachEndOfTravel.JPG",
+            "failureLabel": "Reach end of travel",
+            "failureImage": "img/focus/reachEndOfTravel.JPG"
+        },
+
+        {
+            "failureName": "3. Unit is not sufficiently focused",
+            "failureDescription":  "This failure described that the lens was calibrated and found its peak. However, after past focus test, TE4 will ask the lens to return back to its peak. The problem here is, the lens return back but it did not reached the 90% value of the peak focus score.",
+            "failureCause":  
+            [
+                "1. This normally happens if the UUT doesn't see the target properly. It could be that the current fixture was not optimized for the particular model. Good sample is the 820-10305-1R. This can be fix by aligning the target that will make the UUT look at it straight, or the ROI can be adjusted to look towards the target"
+            ],
+            
+            "failureCarousel": "img/focus/unitInsufficientFocus.JPG",
+            "failureLabel": "Unit is not sufficiently focused",
+            "failureImage": "img/focus/unitInsufficientFocus.JPG"
+        },
+
+        {
+            "failureName": "4. Could not move lens to desired position",
+            "failureDescription":  "Test executive utilize the digimatic to set the starting position of the lens. This failure means that the desired starting position was not attained by the gripper and the lens",
+            "failureCause":  
+            [
+                "1. This happens if the lens is not set property into the gripper, it will not rotate well and it will end up failing if it did not reach the desired starting position. Worn out gripper can cause the lens not to go through within the gripper and will result to this failure."
+            ],
+            
+            "failureCarousel": "img/focus/couldNotMoveLens.png",
+            "failureLabel": "Could not move lens to desired position",
+            "failureImage": "img/focus/couldNotMoveLens.png"
+        },
+
+        {
+            "failureName": "5. Unexpected Rotary Target Piston Position",
+            "failureDescription":  "TE3 detected that the piston is not in the correct position, saying piston position is \"unknown\". It's either, it did not swing, the switch is defective or it swings but it did not reach the switch because of insufficient air",
+            "failureCause":  
+            [
+                "1. Switch is broken or was not activated."
+            ],
+            "failureCarousel": "img/focus/unexpectedRotaryTargetPiston.JPG",
+            "failureLabel": "Unexpected Rotary Target Piston Position",
+            "failureImage": "img/focus/unexpectedRotaryTargetPiston.JPG"
+        }
+    ]
+},
+
+{
+	"id": 8,
+    "testDescription": "IO Test",
+    "descriptionContent": 
+    [
+        "- This test step will verify all I/O pins on the 50-pin external connector are functioning correctly.",
+        "- It test normally if the UUt can turn ON if Test Exeutive tasked it to turn On and it UUT should turn OFF if it is tasked to turn OFF",
+        " ",
+        "-- Strategy --",
+        "1. Activate/deactivate each interface pin",
+        "2. Verify expected response or state",
+        "3. Pass or fail the unit depending on the results."
+    ],
+
+    "disp": { "location": "img/ioTest/io.JPG" },
+
+
+    "failureContents": 
+    [
+
+
+        {
+            "failureName": "1. Uut Input Retrain mismatch",
+            "failureDescription":  "IO result is not as desired. The output should be Off but it's ON in actual",
+            "failureCause": 
+            [
+                "1. UUT issue"
+            ],
+            "failureCarousel": "img/ioTest/ioRetrain.JPG",
+            "failureLabel": "Uut Input Retrain mismatch",
+            "failureImage": "img/ioTest/ioRetrain.JPG"
+        },
+        {
+            "failureName": "1. Uut Reset mismatch",
+            "failureDescription":  "IO result is not as desired. The output should be Off but it's ON in actual",
+            "failureCause": 
+            [
+                "1. UUT issue"
+            ],
+            "failureCarousel": "img/ioTest/ioReset.JPG",
+            "failureLabel": "Uut Input Retrain mismatch Actual: On == Expected: Off",
+            "failureImage": "img/ioTest/ioReset.JPG"
+        }
+    ]
+},
+
+{
+	"id": 9,
+    "testDescription": "Internal Illumination",
+    "descriptionContent": 
+    [
+    "Coming Soon"
+    ],
+    "failureContents": ["Coming Soon"],
+    "disp": { "location": "img/cog.jpg" },
+    
+    "rejectPhotos": 
+    [
+        {
+            "../img":"img/focus/unexpectedRotaryTargetPiston.jpg", 
+            "alt": "Owl Image 1"
+            },
+            {
+            "../img":"img/focus/cog.jpg", 
+            "alt": "Owl Image 2"
+            },
+            {
+            "../img":"img/config1.png", 
+            "alt": "Owl Image 3"
+            }
+    ]
+},
+
+{
+	"id": 10,
+    "testDescription": "Aimer Test",
+    "descriptionContent": 
+    [
+    "Coming Soon"
+    ],
+    "failureContents": ["Coming Soon"],
+    "disp": { "location": "img/cog.jpg" },
+    "rejectPhotos": 
+    [
+        {
+            "../img":"img/focus/unexpectedRotaryTargetPiston.jpg", 
+            "alt": "Owl Image 1"
+            },
+            {
+            "../img":"img/focus/cog.jpg", 
+            "alt": "Owl Image 2"
+            },
+            {
+            "../img":"img/config1.png", 
+            "alt": "Owl Image 3"
+            }
+    ]
+}
+
+
+
+]
+
+

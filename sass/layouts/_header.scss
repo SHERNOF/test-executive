@@ -3,12 +3,12 @@
     background-image: 
         linear-gradient(
             to left top, 
-            rgba($color-primary, 0.5), 
-            rgba($color-black, 0.5)), 
+            rgba($color-primary, 0.4), 
+            rgba($color-black, 0.4)), 
             url(../img/background/1.jpg);
             background-size: cover;
     background-position: top;
-    clip-path: polygon(0 0%, 100% 0, 100% 75vh, 0 100%);
+    // clip-path: polygon(0 0%, 100% 0, 100% 75vh, 0 100%);
     position: relative;
 
     &__logo-box {
