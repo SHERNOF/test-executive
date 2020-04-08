@@ -1,0 +1,51 @@
+// .btn::after{
+//     content: "";
+//     display: inline-block;
+//     height: 100%;
+//     width: 100%;
+//     border-radius: 100px;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     z-index: -1;
+//     transition: all .4s;
+// }
+
+// .btn-white::after{
+//     background-color: white;
+// }
+
+// .btn:hover::after {
+//     /* transform:scale(1.5); */
+//     transform:scalex(1.4) scaleY(1.6);
+//     opacity: 0;
+// }
+
+// .btn-animated {
+//     animation: moveInBottom .5s ease-out .75s;
+//     animation-fill-mode: backwards;
+// }
+
+// #main-footer a{
+//     display: grid;
+//     justify-content: center;
+//     color: #777;
+//     text-decoration: none;
+//     margin-top: 10px;
+// }
+
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+    }
+   
+
+    &-white {
+
+    }
+
+    &-animated {
+
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "test-executive",
+  "version": "1.0.0",
+  "description": "test methodologies",
+  "main": "index.js",
+  "dependencies": {
+    "node": "^13.12.0",
+    "node-sass": "^4.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "shernof",
+  "license": "ISC"
+}
