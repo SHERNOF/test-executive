@@ -39,10 +39,10 @@ body {
 
 body {
   font-family: 'lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #9b9a9a;
+  background: rgba(178, 179, 175, 0.1);
   line-height: 2;
   font-size: 2rem;
-  color: #9b9a9a;
+  color: #b2b3af;
   padding: 3rem; }
 
 .heading-primary {
@@ -94,7 +94,7 @@ body {
 
 .btns-white {
   background-color: white;
-  color: #9b9a9a; }
+  color: #b2b3af; }
 
 .btns:active {
   transform: translateY(-1px);
@@ -193,3 +193,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
+
+.mainTest {
+  visibility: hidden;
+  border: 1px solid black;
+  height: 50vh; }

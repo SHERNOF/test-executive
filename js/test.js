@@ -12,7 +12,7 @@ function Show(){
     this.item = $('.item').hide();
     // ==========
     this.btn = $('.btn').attr("disabled", false)
-    this.failureDisplay = document.getElementById('failureDisplay').style.display = 'none';
+    // this.failureDisplay = document.getElementById('failureDisplay').style.display = 'none';
     this.mainTest = $("#mainTest").show("50");
     this.sidebarRight = $("#sidebarRight").show("50");
     this.rejExt = $(".rejExt").hide("50");  
@@ -36,6 +36,8 @@ function loadData(){
   const show = new Show()
   const configuration = new Btn('#configuration', '#configuration')
   configuration.mainButton();
+
+  document.querySelector('.mainTest').style.visibility = "visible";
   
     // create an xhr object
     const xhr = new XMLHttpRequest();
