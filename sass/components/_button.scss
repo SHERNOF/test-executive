@@ -8,6 +8,7 @@
     border-radius: 10rem;
     transition: all .3s;
     position: relative;
+    
     }
 
     &:hover {
@@ -18,6 +19,7 @@
     &-white {
         background-color: $color-white;
         color: $color-grey;
+        
     }
 
     &:active {
@@ -75,7 +77,8 @@
         position: relative;
         font-size: 1.2rem;
         
-        color: #AEAEAE;
+        // color: #AEAEAE;
+        color: $color-primary;
         text-shadow: 0 1px 0 rgba(255,255,255,.1);
         font-weight: bold;
         background-image:(linear-gradient(#111,#000));
@@ -116,7 +119,7 @@
     }
 
     &:hover{
-    color: #0e0e0e;
+    color:$color-grey;
 	text-shadow:0 -1px 0 rgba(0,0,0,.4);
     }
 
