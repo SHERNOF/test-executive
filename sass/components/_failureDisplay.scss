@@ -1,0 +1,66 @@
+.failureDisplay{
+    
+    visibility: hidden;
+    margin-top: 3rem;
+    display: grid;
+    align-items: center;
+    border-radius: 1rem;
+    border: 1px solid rgba($color-grey, 0.5);
+    padding: 3rem;
+
+    &__box1{
+
+        &-title{
+            font-size: 3rem;
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+        }        
+    }
+
+    &__box2{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 2rem;
+
+        &-item {
+            text-align: center;
+            border: 1px solid rgba($color-grey, 0.5);
+            padding: 2rem;
+            border-radius: .5rem;
+            backface-visibility: hidden;
+        }  
+        
+
+        &-image {
+            height: 18rem;
+            border-radius: .5rem;
+            // border: 1px solid red;
+        
+        }
+
+        &-dimImg {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        &-heading {
+            // color: red;
+            margin-bottom: 2rem;
+        }
+
+    }
+
+  
+
+   
+    
+
+    &__rejectHeading {
+
+    }
+    
+    
+
+}

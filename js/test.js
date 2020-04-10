@@ -1,11 +1,13 @@
 
 $('#btns-main').click(function(){
-    // $('#nav').show();
     document.querySelector('.navbar').style.visibility = 'visible';
+    document.querySelector('.intro').style.visibility = 'visible';
     $('.header').hide();
+    loadData();
+
 })
 
-location.loadData
+// location.loadData
 
 function Show(){
     // not to repeat the append child, technique so not to continuously append the appendChild
@@ -13,7 +15,8 @@ function Show(){
     // ==========
     this.btn = $('.btn').attr("disabled", false)
     // this.failureDisplay = document.getElementById('failureDisplay').style.display = 'none';
-    this.mainTest = $("#mainTest").show("50");
+    // this.mainTest = $("#mainTest").show("50");
+    this.intro = $(".intro").show("50");
     this.sidebarRight = $("#sidebarRight").show("50");
     this.rejExt = $(".rejExt").hide("50");  
   }
@@ -33,11 +36,14 @@ document.getElementById('configuration').addEventListener('click', loadData);
 
 function loadData(){
 
+  $('.btnF').addClass('keepAct');
+  
+
   const show = new Show()
   const configuration = new Btn('#configuration', '#configuration')
   configuration.mainButton();
 
-  document.querySelector('.mainTest').style.visibility = "visible";
+  document.querySelector('.intro').style.visibility = "visible";
   
     // create an xhr object
     const xhr = new XMLHttpRequest();
@@ -69,101 +75,151 @@ function loadData(){
               document.getElementById("sidebarRight").style.display = "none";
             } else {
               // document.getElementById("disp").src = testing[0].disp.location;
-              document.querySelector(".disp").src = testing[0].disp.location;
+              document.querySelector(".intro__box2-disp").src = testing[0].disp.location;
             }                             
             
             // ====== reject display ========
 
             // gather UI
       
-            const box7 = document.querySelector('.box-7')
+            const box1 = document.querySelector('.failureDisplay__box2')
             // create element
-            const box3 = document.createElement('div')
-            box3.className = 'box-3 item';
+            const box2 = document.createElement('div')
+            box2.className = 'failureDisplay__box21 failureDisplay__box2-item';
+
+            const div7 = document.createElement('div')
+            div7.className = 'failureDisplay__box2-heading';
 
             const rej1 = document.createElement('h5')
-            rej1.id = 'rej1'
-            rej1.className = 'rejFont'
+            rej1.className = 'failureDisplay__box2-heading--1'
+
+            div7.appendChild(rej1)
+
+            const div8 = document.createElement('div')
+            div8.className = 'failureDisplay__box2-image';
             
             const disp1 = document.createElement('img')
+            disp1.className = 'failureDisplay__box2-dimImg'
             disp1.id = 'disp1'
-            disp1.className = 'dimImg'
 
-            box3.appendChild(rej1)
-            box3.appendChild(disp1)
+            div8.appendChild(disp1)
 
-            // test.insertBefore(box3, rejExt)
-            $(box3).insertAfter(box7)
+            box2.appendChild(div7)
+            // document.createElement('hr')
+            box2.appendChild(div8)
+
+            // box2.appendChild(rej1)
+            // box2.appendChild(disp1)
+
+            
+            // $(box2).insertAfter(box7)
+            $(box2).appendTo(box1)
 
             document.getElementById("disp1").src = testing[0].failureContents[0].failureCarousel;
-            document.getElementById("rej1").innerHTML = testing[0].failureContents[0].failureLabel;    
+            document.querySelector(".failureDisplay__box2-heading--1").innerHTML = testing[0].failureContents[0].failureLabel;    
 
             // ======= end of 1st box =======
      
             
             // create element
-            const box4 = document.createElement('div')
-            box4.className = 'box-4 item';
+            const box3 = document.createElement('div')
+            box3.className = 'failureDisplay__box22 failureDisplay__box2-item';
+
+            const div1 = document.createElement('div')
+            div1.className = 'failureDisplay__box2-heading';
 
             const rej2 = document.createElement('h5')
-            rej2.id = 'rej2'
-            rej2.className = 'rejFont'
+            rej2.className = 'failureDisplay__box2-heading--2';
+
+            div1.appendChild(rej2)
+
+            const div2 = document.createElement('div')
+            div2.className = 'failureDisplay__box2-image';
             
             const disp2 = document.createElement('img')
+            disp2.className = 'failureDisplay__box2-dimImg'
             disp2.id = 'disp2'
-            disp2.className = 'dimImg'
 
-            box4.appendChild(rej2)
-            box4.appendChild(disp2)
+            div2.appendChild(disp2)
 
-            $(box4).insertAfter(box3)
+            // box3.appendChild(rej2)
+            box3.appendChild(div1)
+            box3.appendChild(div2)
+
+            $(box3).insertAfter(box2)
 
             document.getElementById("disp2").src = testing[0].failureContents[1].failureCarousel; 
-            document.getElementById("rej2").innerHTML = testing[0].failureContents[1].failureLabel;   
+            document.querySelector(".failureDisplay__box2-heading--2").innerHTML = testing[0].failureContents[1].failureLabel;   
 
             // ========== end of box 2 ==============
 
              // create element
-             const box5 = document.createElement('div')
-             box5.className = 'box-5 item';
+             const box4 = document.createElement('div')
+             box4.className = 'failureDisplay__box23 failureDisplay__box2-item';
+
+            const div3 = document.createElement('div')
+            div3.className = 'failureDisplay__box2-heading';
  
              const rej3 = document.createElement('h5')
-             rej3.id = 'rej3'
-             rej3.className = 'rejFont'
+             rej3.className = 'failureDisplay__box2-heading--3';
+
+             div3.appendChild(rej3)
+
+             const div4 = document.createElement('div')
+             div4.className = 'failureDisplay__box2-image';
              
              const disp3 = document.createElement('img')
+             disp3.className = 'failureDisplay__box2-dimImg'
              disp3.id = 'disp3'
-             disp3.className = 'dimImg'
+
+             div4.appendChild(disp3)
  
-             box5.appendChild(rej3)
-             box5.appendChild(disp3)
+            //  box4.appendChild(rej3)
+            //  box4.appendChild(disp3)
+
+            box4.appendChild(div3)
+            box4.appendChild(div4)
  
-             $(box5).insertAfter(box4)
+             $(box4).insertAfter(box3)
  
              document.getElementById("disp3").src = testing[0].failureContents[2].failureCarousel;
-             document.getElementById("rej3").innerHTML = testing[0].failureContents[2].failureLabel;   
+             document.querySelector(".failureDisplay__box2-heading--3").innerHTML = testing[0].failureContents[2].failureLabel;   
+
+             console.log(box4)
 
              // ========== end of box 3 ==============
   
              // create element
-             const box6 = document.createElement('div')
-             box6.className = 'box-6 item';
+             const box5 = document.createElement('div')
+             box5.className = 'failureDisplay__box24 failureDisplay__box2-item';
+
+             const div5 = document.createElement('div')
+             div5.className = 'failureDisplay__box2-heading';
  
              const rej4 = document.createElement('h5')
-             rej4.id = 'rej4'
-             rej4.className = 'rejFont'
+             rej4.className = 'failureDisplay__box2-heading--4';
+
+             div5.appendChild(rej4)
+
+             const div6 = document.createElement('div')
+             div6.className = 'failureDisplay__box2-image';
              
              const disp4 = document.createElement('img')
+             disp4.className = 'failureDisplay__box2-dimImg '
              disp4.id = 'disp4'
-             disp4.className = 'dimImg'
+
+             div6.appendChild(disp4)
+
+            box5.appendChild(div5)
+            box5.appendChild(div6)
  
-             box6.appendChild(rej4)
-             box6.appendChild(disp4)
+            //  box5.appendChild(rej4)
+            //  box5.appendChild(disp4)
  
-             $(box6).insertAfter(box5)
+             $(box5).insertAfter(box4)
  
-             document.getElementById("disp4").src = testing[0].failureContents[3].failureCarousel;
-            document.getElementById("rej4").innerHTML = testing[0].failureContents[3].failureLabel; 
+            document.getElementById("disp4").src = testing[0].failureContents[3].failureCarousel;
+            document.querySelector(".failureDisplay__box2-heading--4").innerHTML = testing[0].failureContents[3].failureLabel; 
 
             // ========== end of box 4 ==============
             
@@ -241,7 +297,11 @@ function loadData(){
               })
         
               $(".tof").click(()=>{
-                $("#failureDisplay").show("easing")
+                // $(".failureDisplay").show("easing")
+                document.querySelector('.failureDisplay').style.visibility = 'visible';
+                document.querySelector('.failureDisplay__box1').style.visibility = 'visible';
+                
+
               })   
 
               $(".x").click(()=>{

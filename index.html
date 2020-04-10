@@ -15,9 +15,10 @@
     
 
 
-    <title>test-executive</title>
+    <title>Test-Executive</title>
+    <link rel="shortcut icon" type="image/ico" href="img/cog-logo-sm.jpg">
 </head>
-<body>
+<body">
 
     
 
@@ -86,11 +87,85 @@
 
     <main>
 
-        <hr>
+        
+        
   
-    <section class="mainTest">test
-      
+    <section class="intro"  onload="loadData()">
+            <div class="intro__box1" >
+                <a id="testDescription" class="btnF tof" href="#failureDisplay"></a>
+                <ul>
+                    <li id="descriptionContent"></li>
+                </ul>
+            </div>
+            
+            <div class="intro__box2" id="desc" >
+                <img id="sidebarRight" class="intro__box2-disp disp">
+            </div>    
+            
     </section>
+
+    <section class="failureDisplay">
+
+        <div class="failureDisplay__box1">
+            <h5 class="failureDisplay__box1-title">Failure Types</h5>    
+        </div>
+
+        <div class="failureDisplay__box2">
+
+        </div>
+        
+    </section>
+
+    <section class="rejectDetails">
+
+        <div class="rejectDetails__box1">
+            <img class="rejectDetails__box1-img" id="rejDisp">
+        </div>
+
+        <div class="rejectDetails__box2">
+
+            <div class="rejectDetails__box2-box1">
+                <a class="btnC rejectDetails__box2-box1--x" ><ion-icon name="close-outline" style="font-size: 20px; background-color: rgb(241, 10, 10); color: aliceblue; border-radius: 3px;"></ion-icon></a>   
+                <!-- <a class="btnC rejectDetails__box2-box1--x">sherwin</a>    -->
+                <!-- <a href="" class="btnC">x</a>   -->
+                <!-- <a href="#">
+                    <span class="left">
+                      <span class="circle-left"></span>
+                      <span class="circle-right"></span>
+                    </span>
+                    <span class="right">
+                      <span class="circle-left"></span>
+                      <span class="circle-right"></span>
+                    </span>
+                  </a> -->
+            </div>
+
+            <!-- <div class="rejectDetails__box2-box2"> -->
+                <div class="rejectDetails__box2--mainbox">
+                    <div>
+                        <h5 style="color:red">Failure Definition:</h5>
+                        <p id="rejDesc" style="color:red" class="rejDesc" ></p>
+                    </div>
+
+                    <div class="rejectDetails__box2-box3">
+                        <hr>
+                    </div>  
+
+                    <div class="rejectDetails__box2-box4">
+                        <h5>To look at:</h5>
+                        <ul>
+                        <li id="rejExp"></li>
+                        </ul>
+                    </div>  
+                </div>
+            
+
+        <!-- </div> -->
+
+
+    </section>
+
+
 
 </main>
 
@@ -109,6 +184,7 @@
 
 
     <script src="js/test.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     
 </body>
 </html>

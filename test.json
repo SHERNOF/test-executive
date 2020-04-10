@@ -6,7 +6,8 @@
     "descriptionContent": 
     
     [
-    "Test Type - This test will write and/or verify the device’s configuration information (serial number, MAC Address, part number, hardware revisions, firmware revisions etc.) on the unit under test.",    
+
+    "This test will write and/or verify the device’s configuration information (serial number, MAC Address, part number, hardware revisions, firmware revisions etc.) on the unit under test.",    
     " ",
     "-- Strategy --",
 
@@ -15,7 +16,7 @@
     "3. Verify any required hardware versions",
     "4. Verify firmware versions",
     " ",
-    "-- Lofile Definition --",
+    "-- Logfile Definition --",
    
     "1. As per name Configuration, this test basically setup, configure and or update the UUT prior to full focus or functional test",
     "2. Lines 1 - 7; TE3 captures the information from the barcode label of the UUT. Normally the Serial Number, MAC Address PArt Number and Revision", 

@@ -1,20 +1,28 @@
 
 
 @import "abstract/variables";
+@import "abstract/_mixins";
 
 
 @import "base/base";
 @import "base/animations";
 @import "base/typography";
 
+@import "components/intro";
 @import "components/button";
 @import "components/navbar";
+@import "components/failureDisplay";
+@import "components/parts";
+@import "components/rejectDetails";
+
+
 
 
 
 
 @import "layouts/header";
-@import "layouts/_mainTest";
+
+
 
 
 

@@ -1,0 +1,77 @@
+.rejectDetails{
+    // visibility: hidden;
+    margin-top: 3rem;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 1px 1px  rgba(114, 112, 112, 0.54);
+    border: 1px solid rgba(114, 112, 112, 0.54);
+    padding: 10px;
+    justify-content: space-around;
+    margin-top: 2rem;
+    border: 1px solid yellowgreen;
+    height: 50vh;
+
+    &__box1 {
+        order: 1;
+        flex: 1;
+    
+        display: grid;
+        grid-template-columns: 1fr;
+        /* background: rgba(201, 240, 75, 0.4); */
+        background: linear-gradient(to bottom right, rgba(82, 85, 245, 0.6), rgba(3, 98, 122, 0.5));
+        padding: 3rem;
+        border-radius: 5px;
+        margin-right: 5px;
+        // max-width: 100%;
+        
+        align-content: center;
+
+        &-img {
+            // max-height: inherit;
+            height: 100%;
+            width: 100%;
+            // object-fit: cover;
+        }
+    }
+
+    &__box2 {
+        background: rgba(175, 17, 17, 0.4);
+        order: 2;
+        flex: 1;
+        border-radius: 5px;
+        margin-left: 5px;
+        padding: 2rem;
+        
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        
+
+        &-box1 {          
+            grid-column: 1/5;
+            justify-self: right;
+            margin-top: -1rem;
+            margin-right: -.5rem;
+        }
+    
+        
+        &--mainbox {
+            grid-column: 1/5;
+        }
+        
+
+        &-box3 {
+            grid-column: 1/5;
+        }
+    
+        &-box4 {
+            grid-column: 1/5;
+        }
+
+    }
+
+ 
+    
+
+
+}

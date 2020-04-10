@@ -1,7 +1,7 @@
 body {
     font-family: 'lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: rgba($color-grey, .1);
-    
+
     line-height: 2;
     font-size: 2rem;
     color: $color-grey;
@@ -54,4 +54,11 @@ body {
 
     }
 
+}
+
+.intro {
+    font-size: 1.5rem;
+    color: $color-grey;
+    padding: 5rem;
+    line-height: 1.5;
 }
