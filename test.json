@@ -513,34 +513,25 @@
     "Pass or fail the unit depending on the results"
     ],
 
-    "disp": { "location": "img/default/default4.jpeg" },
+    "disp": { "location": "img/intIllum/couldNotConnecttoChecker.png" },
     
     "failureContents": 
     [
         {
-            "failureName": "1. Uut Input Retrain mismatch",
-            "failureDescription":  "IO result is not as desired. The output should be Off but it's ON in actual",
+            "failureName": "1. Could not connect to checker",
+            "failureDescription":  "Test Executive cannot connect to checker during internal illumination test",
             "failureCause": 
             [
-                "1. UUT issue"
+                "Checker hang",
+                "Checker is defective"
             ],
-            "failureCarousel": "img/ioTest/ioRetrain.JPG",
-            "failureLabel": "Uut Input Retrain mismatch",
-            "failureImage": "img/ioTest/ioRetrain.JPG"
-        },
-        {
-            "failureName": "1. Uut Reset mismatch",
-            "failureDescription":  "IO result is not as desired. The output should be Off but it's ON in actual",
-            "failureCause": 
-            [
-                "1. UUT issue"
-            ],
-            "failureCarousel": "img/ioTest/ioReset.JPG",
-            "failureLabel": "Uut Input Retrain mismatch Actual: On == Expected: Off",
-            "failureImage": "img/ioTest/ioReset.JPG"
+            "failureCarousel": "img/intIllum/couldNotConnecttoChecker.png",
+            "failureLabel": "Could not connect to checker",
+            "failureImage": "img/intIllum/couldNotConnecttoChecker.png"
         }
     ]
 },
+
 
 {
 	"id": 10,
@@ -555,31 +546,35 @@
     "Pass or fail the unit depending on the results"
     ],
     
-    "disp": { "location": "img/default/default3.png" },
+    "disp": { "location": "img/aimer/checkerTest.png" },
 
     "failureContents": 
     [
         {
-            "failureName": "1. Uut Input Retrain mismatch",
-            "failureDescription":  "IO result is not as desired. The output should be Off but it's ON in actual",
+            "failureName": "1. Checker could not connect",
+            "failureDescription":  "Test Executive cannot connect to checker during internal illumination test",
             "failureCause": 
             [
-                "1. UUT issue"
+                "Checker hang",
+                "Checker is defective"
             ],
-            "failureCarousel": "img/ioTest/ioRetrain.JPG",
+            "failureCarousel": "img/aimer/CheckerCouldNotConnect.png",
             "failureLabel": "Uut Input Retrain mismatch",
-            "failureImage": "img/ioTest/ioRetrain.JPG"
+            "failureImage": "img/aimer/CheckerCouldNotConnect.png"
         },
         {
-            "failureName": "1. Uut Reset mismatch",
-            "failureDescription":  "IO result is not as desired. The output should be Off but it's ON in actual",
+            "failureName": "2. Checker Part Detect State",
+            "failureDescription":  "Test Executive either did not see the aimer or the blob is not within the area of detection",
             "failureCause": 
             [
-                "1. UUT issue"
+                "1. Fixture hood is not totally close",
+                "2. Checker job is shifted",
+                "3. Clasp worn out",
+                "4. Checker position was shifted"
             ],
-            "failureCarousel": "img/ioTest/ioReset.JPG",
-            "failureLabel": "Uut Input Retrain mismatch Actual: On == Expected: Off",
-            "failureImage": "img/ioTest/ioReset.JPG"
+            "failureCarousel": "img/aimer/checkerTest.png",
+            "failureLabel": "2. Checker Part Detect State",
+            "failureImage": "img/aimer/checkerTest.png"
         }
     ]
 }

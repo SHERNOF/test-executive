@@ -1689,40 +1689,12 @@ document.querySelector('.failureDisplay').style.visibility = 'hidden';
             document.querySelector(".failureDisplay__box2-heading--1").innerHTML = testing[8].failureContents[0].failureLabel;    
 
             // ======= end of 1st box =======
-     
-            const box3 = document.createElement('div')
-            box3.className = 'failureDisplay__box22 item';
-
-            const div1 = document.createElement('div')
-            div1.className = 'failureDisplay__box2-heading';
-
-            const rej2 = document.createElement('h5')
-            rej2.className = 'failureDisplay__box2-heading--2';
-
-            div1.appendChild(rej2)
-
-            const div2 = document.createElement('div')
-            div2.className = 'failureDisplay__box2-image';
-            
-            const disp2 = document.createElement('img')
-            disp2.className = 'failureDisplay__box2-dimImg'
-            disp2.id = 'disp2'
-
-            div2.appendChild(disp2)
-            box3.appendChild(div1)
-            box3.appendChild(div2)
-
-            $(box3).insertAfter(box2)
-
-            document.getElementById("disp2").src = testing[8].failureContents[1].failureCarousel;
-            document.querySelector(".failureDisplay__box2-heading--2").innerHTML = testing[8].failureContents[1].failureLabel; 
-
-            // ========== end of box 2 ==============
 
             // Cause of Failure
+
             let c = "";
               for (i=0; i < testing[8].descriptionContent.length; i++){
-                  c += testing[8].failureContents[1].failureCause + "<br>";
+                  c += testing[8].failureContents[0].failureCause + "<br>";
               }
               
               $("#disp1").click(()=>{
@@ -1737,19 +1709,6 @@ document.querySelector('.failureDisplay').style.visibility = 'hidden';
                     d += testing[8].failureContents[0].failureCause[i] + "<br>";
                 }
                 document.getElementById("rejExp").innerHTML = d;
-              })
-
-              $("#disp2").click(()=>{
-                document.querySelector('.rejectDetails').style.visibility = 'visible';
-                $(".failureDisplay").hide();
-                $(".intro").hide();   
-                document.getElementById("rejDisp").src = testing[8].failureContents[1].failureImage; 
-                document.getElementById("rejDesc").innerHTML = testing[8].failureContents[1].failureDescription;
-                let e = "";
-                for (i=0; i < testing[8].failureContents[1].failureCause.length; i++){
-                    e += testing[8].failureContents[1].failureCause[i] + "<br>";
-                }
-                document.getElementById("rejExp").innerHTML = e;              
               })
 
               $(".btnF").click(()=>{
@@ -1788,23 +1747,23 @@ document.querySelector('.failureDisplay').style.visibility = 'hidden';
     xhr.onload = function(){
         if(this.status === 200){
             const testing = JSON.parse(this.responseText);
-            document.getElementById("testDescription").innerHTML = testing[7].testDescription;  
-            document.getElementById("failureTypes").innerHTML = testing[7].testDescription + " Failure Types";  
+            document.getElementById("testDescription").innerHTML = testing[9].testDescription;  
+            document.getElementById("failureTypes").innerHTML = testing[9].testDescription + " Failure Types";  
 
             // Test Description
             let i, a = "";
-              for (i=0; i < testing[7].descriptionContent.length; i++){
-                  a += testing[7].descriptionContent[i] + "<br>";
+              for (i=0; i < testing[9].descriptionContent.length; i++){
+                  a += testing[9].descriptionContent[i] + "<br>";
               }
               document.getElementById("descriptionContent").innerHTML = a;
 
             //   ========= photo ==========
-            let z = testing[7].disp.location
+            let z = testing[9].disp.location
 
             if(z === ""){
               document.getElementById("sidebarRight").style.display = "none";
             } else {
-              document.querySelector(".intro__box2-disp").src = testing[7].disp.location;
+              document.querySelector(".intro__box2-disp").src = testing[9].disp.location;
             }                               
 
                  // ====== reject display ========
@@ -1834,8 +1793,8 @@ document.querySelector('.failureDisplay').style.visibility = 'hidden';
             box2.appendChild(div8)
             $(box2).insertAfter(box1)
 
-            document.getElementById("disp1").src = testing[7].failureContents[0].failureCarousel;
-            document.querySelector(".failureDisplay__box2-heading--1").innerHTML = testing[7].failureContents[0].failureLabel;    
+            document.getElementById("disp1").src = testing[9].failureContents[0].failureCarousel;
+            document.querySelector(".failureDisplay__box2-heading--1").innerHTML = testing[9].failureContents[0].failureLabel;    
 
             // ======= end of 1st box =======
      
@@ -1863,27 +1822,27 @@ document.querySelector('.failureDisplay').style.visibility = 'hidden';
 
             $(box3).insertAfter(box2)
 
-            document.getElementById("disp2").src = testing[7].failureContents[1].failureCarousel;
-            document.querySelector(".failureDisplay__box2-heading--2").innerHTML = testing[7].failureContents[1].failureLabel; 
+            document.getElementById("disp2").src = testing[9].failureContents[1].failureCarousel;
+            document.querySelector(".failureDisplay__box2-heading--2").innerHTML = testing[9].failureContents[1].failureLabel; 
 
             // ========== end of box 2 ==============
 
             // Cause of Failure
             let c = "";
-              for (i=0; i < testing[7].descriptionContent.length; i++){
-                  c += testing[7].failureContents[1].failureCause + "<br>";
+              for (i=0; i < testing[9].descriptionContent.length; i++){
+                  c += testing[9].failureContents[1].failureCause + "<br>";
               }
               
               $("#disp1").click(()=>{
                 document.querySelector('.rejectDetails').style.visibility = 'visible';
                 $(".failureDisplay").hide();
                 $(".intro").hide();   
-                document.getElementById("rejDisp").src = testing[7].failureContents[0].failureImage; 
-                document.getElementById("rejDesc").innerHTML = testing[7].failureContents[0].failureDescription;
+                document.getElementById("rejDisp").src = testing[9].failureContents[0].failureImage; 
+                document.getElementById("rejDesc").innerHTML = testing[9].failureContents[0].failureDescription;
 
                 let d = "";
-                for (i=0; i < testing[7].failureContents[0].failureCause.length; i++){
-                    d += testing[7].failureContents[0].failureCause[i] + "<br>";
+                for (i=0; i < testing[9].failureContents[0].failureCause.length; i++){
+                    d += testing[9].failureContents[0].failureCause[i] + "<br>";
                 }
                 document.getElementById("rejExp").innerHTML = d;
               })
@@ -1895,8 +1854,8 @@ document.querySelector('.failureDisplay').style.visibility = 'hidden';
                 document.getElementById("rejDisp").src = testing[5].failureContents[1].failureImage; 
                 document.getElementById("rejDesc").innerHTML = testing[5].failureContents[1].failureDescription;
                 let e = "";
-                for (i=0; i < testing[7].failureContents[1].failureCause.length; i++){
-                    e += testing[7].failureContents[1].failureCause[i] + "<br>";
+                for (i=0; i < testing[9].failureContents[1].failureCause.length; i++){
+                    e += testing[9].failureContents[1].failureCause[i] + "<br>";
                 }
                 document.getElementById("rejExp").innerHTML = e;              
               })
