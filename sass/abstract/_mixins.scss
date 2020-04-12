@@ -10,3 +10,30 @@
     }
 
 }
+
+
+@mixin transition ($prop: all, $time: 1s, $ease: ease-out) {
+    -webkit-transition : $prop $time $ease;
+    -moz-transition    : $prop $time $ease;
+    -ms-transition     : $prop $time $ease;
+    -o-transition      : $prop $time $ease;
+    transition         : $prop $time $ease;
+  }
+  @mixin rotate($degrees) {
+    -webkit-transform : rotate($degrees);
+    -moz-transform    : rotate($degrees);
+    -ms-transform     : rotate($degrees);
+    -o-transform      : rotate($degrees);
+    transform         : rotate($degrees);
+  }
+  
+  @mixin square( $size ){
+    width: $size;
+    height: $size;
+  }
+
+
+  
+ 
+  
+  // ---- [ Close Button ] ---- //

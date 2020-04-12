@@ -1,14 +1,31 @@
 $color-primary: rgb(241, 241, 64);
 $color-black: black;
 $color-white: white;
-$color-grey: rgb(178, 179, 175);
-$color-grey1: rgb(224, 221, 221);
+$color-grey: rgb(179, 179, 169);
+$color-grey1: rgb(168, 162, 162);
 $color-black-light: rgba(117, 115, 115, 0.829);
 
 $btn_width: 18rem;
 $btn_height:$btn_width * .2;
 
 $btn_widthC: 5rem;
-$btn_heightC:$btn_width * .2
+$btn_heightC:$btn_width * .2;
+
+
+$black: #000;
+$white: #fff;
+
+
+// grade grey
+$gradient1: #bdc3c7;
+$gradient2: #2c3e50;
+
+// 50 shades of grey
+$gradient3: #bdc3c7;
+$gradient4: #2c3e50;
+
+// titaniun
+$gradient5: #283048;
+$gradient6: #859398;
 
 

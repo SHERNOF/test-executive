@@ -4,14 +4,14 @@ body {
 
     line-height: 2;
     font-size: 2rem;
-    color: $color-grey;
+    color: $color-black-light;
     padding: 3rem;    
     
 }
 
 .heading-primary {
 
-    color: $color-grey1;
+    color: $color-white;
     margin-bottom: 6rem;
     text-transform: uppercase;
     backface-visibility: hidden;
@@ -27,6 +27,7 @@ body {
         animation: moveInLeft;
         animation-duration: 3s;
         animation-timing-function: ease-out;
+       
         
     }
 
@@ -61,4 +62,29 @@ body {
     color: $color-grey;
     padding: 5rem;
     line-height: 1.5;
+}
+
+#failureTypes{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, $color-grey1, rgba($black, .9));
+    backface-visibility: hidden;
+
+    // this will make the background color to be until the end of the text only
+    display: inline-block;
+    // this will clip the background exatly where the text is. background is linear-gradient
+    -webkit-background-clip: text;
+    color: transparent;
+
+    letter-spacing: .2rem;
+
+    // this is for the hover
+    // transition: all 1s;
+
+    // &:hover {
+    //     transform: scale3d(1.02, 1.02, 1.02);
+    //     text-shadow: .5rem 1rem 2rem rgba($color-black, 0.2);
+    // }
+    
 }

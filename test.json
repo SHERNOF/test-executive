@@ -41,7 +41,7 @@
             ],
             "failureCarousel": "img/default/default1.jpg",
             "failureLabel": "The ID reader is unable to read the UUT label",
-            "failureImage": "img/default/default3.png"
+            "failureImage": "img/default/default1.jpg"
         },
 
         {
@@ -51,9 +51,9 @@
             [
                 "The Technician Wrongly choose the part number"
             ],
-            "failureCarousel": "img/default/default.jpg",
+            "failureCarousel": "img/default/default2.jpg",
             "failureLabel": "Part Number mismatch",
-            "failureImage": "img/default/default3.png"
+            "failureImage": "img/default/default2.jpg"
         },
 
         {
@@ -63,9 +63,9 @@
             [
                 "Tester's hood is open, LID switch is broken or was not activated"
             ],
-            "failureCarousel": "img/default/default1.jpg",
+            "failureCarousel": "img/default/default4.jpeg",
             "failureLabel": "Can't Read Label - Lid Open",
-            "failureImage": "img/default/default1.jpg"
+            "failureImage": "img/default/default4.jpeg"
         },
 
         {
@@ -75,9 +75,9 @@
             [
                 "The UUT most probably has a different MAC Address programmed in its EEPROM. Can be solve by JTAG erasure"
             ],
-            "failureCarousel": "img/default/default1.jpg",
+            "failureCarousel": "img/default/default3.png",
             "failureLabel": "Mac Address mismatch Actual",
-            "failureImage": "img/default/default.jpg"
+            "failureImage": "img/default/default3.png"
         }
     ]
 },
@@ -505,25 +505,40 @@
     "testDescription": "Internal Illumination",
     "descriptionContent": 
     [
-    "Coming Soon"
+    "This test step will verify the Internal illumination functionality. This is a go/no-go test, since all illumination modules will be tested and programmed elsewhere.",
+    " ",
+    "-- Strategy --",
+    "Acquire an image with internal illumination turned on, UUT looking at a flat target.",
+    "Verify expected response or state",
+    "Pass or fail the unit depending on the results"
     ],
-    "failureContents": ["Coming Soon"],
-    "disp": { "location": "img/cog.jpg" },
+
+    "disp": { "location": "img/default/default4.jpeg" },
     
-    "rejectPhotos": 
+    "failureContents": 
     [
         {
-            "../img":"img/focus/unexpectedRotaryTargetPiston.jpg", 
-            "alt": "Owl Image 1"
-            },
-            {
-            "../img":"img/focus/cog.jpg", 
-            "alt": "Owl Image 2"
-            },
-            {
-            "../img":"img/config1.png", 
-            "alt": "Owl Image 3"
-            }
+            "failureName": "1. Uut Input Retrain mismatch",
+            "failureDescription":  "IO result is not as desired. The output should be Off but it's ON in actual",
+            "failureCause": 
+            [
+                "1. UUT issue"
+            ],
+            "failureCarousel": "img/ioTest/ioRetrain.JPG",
+            "failureLabel": "Uut Input Retrain mismatch",
+            "failureImage": "img/ioTest/ioRetrain.JPG"
+        },
+        {
+            "failureName": "1. Uut Reset mismatch",
+            "failureDescription":  "IO result is not as desired. The output should be Off but it's ON in actual",
+            "failureCause": 
+            [
+                "1. UUT issue"
+            ],
+            "failureCarousel": "img/ioTest/ioReset.JPG",
+            "failureLabel": "Uut Input Retrain mismatch Actual: On == Expected: Off",
+            "failureImage": "img/ioTest/ioReset.JPG"
+        }
     ]
 },
 
@@ -532,24 +547,40 @@
     "testDescription": "Aimer Test",
     "descriptionContent": 
     [
-    "Coming Soon"
+    "This test will verify that On-Axis Aimer can turn on/off and is within tolerance of “center”. The test fixture will have the appropriate hardware for this test",
+    " ",
+    "-- Strategy --",
+    "Connect over to the Accessory Port",
+    "Send data to the unit under test and receive an expected response",
+    "Pass or fail the unit depending on the results"
     ],
-    "failureContents": ["Coming Soon"],
-    "disp": { "location": "img/cog.jpg" },
-    "rejectPhotos": 
+    
+    "disp": { "location": "img/default/default3.png" },
+
+    "failureContents": 
     [
         {
-            "../img":"img/focus/unexpectedRotaryTargetPiston.jpg", 
-            "alt": "Owl Image 1"
-            },
-            {
-            "../img":"img/focus/cog.jpg", 
-            "alt": "Owl Image 2"
-            },
-            {
-            "../img":"img/config1.png", 
-            "alt": "Owl Image 3"
-            }
+            "failureName": "1. Uut Input Retrain mismatch",
+            "failureDescription":  "IO result is not as desired. The output should be Off but it's ON in actual",
+            "failureCause": 
+            [
+                "1. UUT issue"
+            ],
+            "failureCarousel": "img/ioTest/ioRetrain.JPG",
+            "failureLabel": "Uut Input Retrain mismatch",
+            "failureImage": "img/ioTest/ioRetrain.JPG"
+        },
+        {
+            "failureName": "1. Uut Reset mismatch",
+            "failureDescription":  "IO result is not as desired. The output should be Off but it's ON in actual",
+            "failureCause": 
+            [
+                "1. UUT issue"
+            ],
+            "failureCarousel": "img/ioTest/ioReset.JPG",
+            "failureLabel": "Uut Input Retrain mismatch Actual: On == Expected: Off",
+            "failureImage": "img/ioTest/ioReset.JPG"
+        }
     ]
 }
 

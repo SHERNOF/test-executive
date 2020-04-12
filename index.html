@@ -33,12 +33,12 @@
                 <span class="heading-primary--sub">Test Methodologies</span>
                 <span class="heading-primary--sub1">Basic Definition Of Each Test</span>
             </h1>
-            <a href="#" class="btns btns-white btns-animated" id="btns-main">Read More</a>
+            <a href="#" class="btns btns-white btns-animated" id="btns-main">Explore</a>
         </div>
     </header>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky" id="nav">
         <a class="navbar-brand" href="index.html" style="color: rgb(247, 247, 148); font-size: 2rem;">Cognex Test Methodologies</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@
             <ul class="navbar-nav " >
                 <li class="nav-item dropdown active"  >
                     <a  class="nav-link dropdown-toggle" id="te3" style="color: rgb(199, 199, 192);" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Test Executive 3
+                    Focus Test
                     </a>
                     <div class="dropdown-menu te3Test" id="te3" aria-labelledby="navbarDropdownMenuLink" >
                         <button class="btn dropdown-item text-muted mb-1 configuration" id="configuration" style="font-size: 1.2rem;">Configuration Test</button>
@@ -59,12 +59,12 @@
                         <button class="btn dropdown-item text-muted mb-1 hotPixel" id="hotPixel"  disabled style="font-size: 1.2rem;">Hot Pixel</button>
                         <button class="btn dropdown-item text-muted mb-1 focusTest" id="focusTest" style="font-size: 1.2rem;">Focus test</button>
                         <button class="btn dropdown-item text-muted mb-1 ioTest" id="ioTest"  disabled style="font-size: 1.2rem;">IO Test</button>
-                        <!-- <button class="btn dropdown-item text-muted mb-1 intIllum" id="intIllum"  disabled>Internal Illumination</button> -->
-                        <!-- <button class="btn dropdown-item text-muted mb-1 aimer" id="aimer"  disabled>Target Aimer</button> -->
+                        <button class="btn dropdown-item text-muted mb-1 intIllum" id="intIllum"  disabled>Internal Illumination</button>
+                        <button class="btn dropdown-item text-muted mb-1 aimer" id="aimer"  disabled>Target Aimer</button>
                     </div>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle " id="te4" href="#" style="color: rgb(199, 199, 192)" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Test Executive 4
+                    Final Test
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <button class="btn dropdown-item text-muted mb-1 sdp" id="sdp"  disabled>Later</button>
@@ -87,12 +87,9 @@
 
     <main>
 
-        
-        
-  
     <section class="intro"  onload="loadData()">
             <div class="intro__box1" >
-                <a id="testDescription" class="btnF tof" href="#failureDisplay"></a>
+                <a id="testDescription" class="btnF" href="#"></a>
                 <ul>
                     <li id="descriptionContent"></li>
                 </ul>
@@ -104,15 +101,21 @@
             
     </section>
 
-    <section class="failureDisplay">
+    <section class="failureDisplay" id="test">
+       
+        <div class="main">
+            
+            <div class="failureDisplay__box1">
+                <h5 class="failureDisplay__box1-title" id="failureTypes">Failure Types</h5>    
+            </div>
 
-        <div class="failureDisplay__box1">
-            <h5 class="failureDisplay__box1-title">Failure Types</h5>    
-        </div>
+            <div class="failureDisplay__box2">
 
-        <div class="failureDisplay__box2">
+                <hr class="insertBox">
 
-        </div>
+            </div>
+
+        </div> 
         
     </section>
 
@@ -125,47 +128,25 @@
         <div class="rejectDetails__box2">
 
             <div class="rejectDetails__box2-box1">
-                <a class="btnC rejectDetails__box2-box1--x" ><ion-icon name="close-outline" style="font-size: 20px; background-color: rgb(241, 10, 10); color: aliceblue; border-radius: 3px;"></ion-icon></a>   
-                <!-- <a class="btnC rejectDetails__box2-box1--x">sherwin</a>    -->
-                <!-- <a href="" class="btnC">x</a>   -->
-                <!-- <a href="#">
-                    <span class="left">
-                      <span class="circle-left"></span>
-                      <span class="circle-right"></span>
-                    </span>
-                    <span class="right">
-                      <span class="circle-left"></span>
-                      <span class="circle-right"></span>
-                    </span>
-                  </a> -->
+                <a class="btnC rejectDetails__box2-box1--x" href="#"></a>   
             </div>
 
-            <!-- <div class="rejectDetails__box2-box2"> -->
-                <div class="rejectDetails__box2--mainbox">
-                    <div>
-                        <h5 style="color:red">Failure Definition:</h5>
-                        <p id="rejDesc" style="color:red" class="rejDesc" ></p>
-                    </div>
+            <div class="rejectDetails__box2--mainbox">
+                <h1 >Failure Definition:</h1>
+                <p id="rejDesc"  class="rejDesc" ></p>
+                <hr>
+            </div>
 
-                    <div class="rejectDetails__box2-box3">
-                        <hr>
-                    </div>  
+            <div class="rejectDetails__box2-box3">
+                <h1>To look at:</h1>
+                <ul>
+                <li id="rejExp"></li>
+                </ul>
+            </div>  
 
-                    <div class="rejectDetails__box2-box4">
-                        <h5>To look at:</h5>
-                        <ul>
-                        <li id="rejExp"></li>
-                        </ul>
-                    </div>  
-                </div>
-            
-
-        <!-- </div> -->
-
+        </div>
 
     </section>
-
-
 
 </main>
 

@@ -1,11 +1,18 @@
 .navbar {
     visibility: hidden;
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
     
     &-nav {
         list-style: none;
         margin: 0px;
         padding: 0px;
         text-align: right;
+        
     }
 
     &-right{
