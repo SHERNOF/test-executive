@@ -1169,7 +1169,7 @@ document.querySelector('.failureDisplay').style.visibility = 'hidden';
               $(".btnF").click(()=>{
                 document.querySelector('.intro').style.display = 'none';
                 document.querySelector('.failureDisplay').style.visibility = 'visible';
-                $(".failureDisplay").show();
+                document.getElementById("failureTypes").style.visibility = 'visible';
               })   
 
               $(".btnC").click(()=>{
@@ -1195,6 +1195,7 @@ function loadDataFocus(){
 
   const focus = new Btn('#focusTest', '#focusTest')
   focus.mainButton();
+  document.querySelector('.failureDisplay').style.visibility = 'hidden';
     
     const xhr = new XMLHttpRequest();
 
@@ -1456,7 +1457,7 @@ function loadDataFocus(){
               $(".btnF").click(()=>{
                 document.querySelector('.intro').style.display = 'none';
                 document.querySelector('.failureDisplay').style.visibility = 'visible';
-                $(".failureDisplay").show();
+                document.getElementById("failureTypes").style.visibility = 'visible';
               })   
 
               $(".btnC").click(()=>{
