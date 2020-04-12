@@ -546,7 +546,7 @@
     "Pass or fail the unit depending on the results"
     ],
     
-    "disp": { "location": "img/aimer/checkerTest.png" },
+    "disp": { "location": "img/aimer/aimerTest.png" },
 
     "failureContents": 
     [
@@ -559,7 +559,7 @@
                 "Checker is defective"
             ],
             "failureCarousel": "img/aimer/CheckerCouldNotConnect.png",
-            "failureLabel": "Uut Input Retrain mismatch",
+            "failureLabel": "Checker could not connect",
             "failureImage": "img/aimer/CheckerCouldNotConnect.png"
         },
         {
@@ -572,9 +572,9 @@
                 "3. Clasp worn out",
                 "4. Checker position was shifted"
             ],
-            "failureCarousel": "img/aimer/checkerTest.png",
+            "failureCarousel": "img/aimer/aimerTest.png",
             "failureLabel": "2. Checker Part Detect State",
-            "failureImage": "img/aimer/checkerTest.png"
+            "failureImage": "img/aimer/aimerTest.png"
         }
     ]
 }

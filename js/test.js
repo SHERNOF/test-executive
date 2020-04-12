@@ -1795,7 +1795,7 @@ document.querySelector('.failureDisplay').style.visibility = 'hidden';
 
             document.getElementById("disp1").src = testing[9].failureContents[0].failureCarousel;
             document.querySelector(".failureDisplay__box2-heading--1").innerHTML = testing[9].failureContents[0].failureLabel;    
-
+          
             // ======= end of 1st box =======
      
             const box3 = document.createElement('div')
@@ -1851,8 +1851,8 @@ document.querySelector('.failureDisplay').style.visibility = 'hidden';
                 document.querySelector('.rejectDetails').style.visibility = 'visible';
                 $(".failureDisplay").hide();
                 $(".intro").hide();   
-                document.getElementById("rejDisp").src = testing[5].failureContents[1].failureImage; 
-                document.getElementById("rejDesc").innerHTML = testing[5].failureContents[1].failureDescription;
+                document.getElementById("rejDisp").src = testing[9].failureContents[1].failureImage; 
+                document.getElementById("rejDesc").innerHTML = testing[9].failureContents[1].failureDescription;
                 let e = "";
                 for (i=0; i < testing[9].failureContents[1].failureCause.length; i++){
                     e += testing[9].failureContents[1].failureCause[i] + "<br>";
@@ -1876,4 +1876,4 @@ document.querySelector('.failureDisplay').style.visibility = 'hidden';
     xhr.send();
 }
 
-// =====================  End of Internal Illumination  =====================================
+// =====================  End of Aimer Test  =====================================
