@@ -513,7 +513,7 @@
     "Pass or fail the unit depending on the results"
     ],
 
-    "disp": { "location": "img/intIllum/couldNotConnecttoChecker.png" },
+    "disp": { "location": "img/intIllum/intIllum.png" },
     
     "failureContents": 
     [
