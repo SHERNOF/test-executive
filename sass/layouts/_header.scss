@@ -12,13 +12,26 @@
     position: relative;
 
     &__logo-box {
+
+        
+
         position: absolute;
         top: 4rem;
         left: 4rem;
     }
 
+
+
     &__logo {
+        @include square(4rem);
+        border-radius: .4rem; 
+        position   : absolute;
+        display    : block;
+        z-index    : 200;
+        text-indent : -9999px;
+        box-shadow: 0px 0px 50px 5px rgba(245, 242, 239, 0.5);
         height: 3.5rem;
+        
     }
 
     &__text-box {

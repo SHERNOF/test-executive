@@ -89,12 +89,12 @@ body {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
-  background-image: linear-gradient(to right, #a8a2a2, rgba(0, 0, 0, 0.9));
+  background-image: linear-gradient(to right, #948f8f, rgba(0, 0, 0, 0.9));
   backface-visibility: hidden;
   display: inline-block;
   -webkit-background-clip: text;
   color: transparent;
-  letter-spacing: .2rem; }
+  letter-spacing: .05rem; }
 
 .intro {
   visibility: hidden;
@@ -129,7 +129,7 @@ body {
   text-decoration: none;
   padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 10rem;
+  border-radius: 2rem;
   transition: all .3s;
   position: relative; }
 
@@ -139,7 +139,7 @@ body {
 
 .btns-white {
   background-color: white;
-  color: #a8a2a2; }
+  color: #948f8f; }
 
 .btns:active {
   transform: translateY(-1px);
@@ -398,6 +398,14 @@ ul {
     top: 4rem;
     left: 4rem; }
   .header__logo {
+    width: 4rem;
+    height: 4rem;
+    border-radius: .4rem;
+    position: absolute;
+    display: block;
+    z-index: 200;
+    text-indent: -9999px;
+    box-shadow: 0px 0px 50px 5px rgba(245, 242, 239, 0.5);
     height: 3.5rem; }
   .header__text-box {
     position: absolute;
