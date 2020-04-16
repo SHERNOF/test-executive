@@ -3,7 +3,7 @@ $('#btns-main').click(function(){
     document.querySelector('.navbar').style.visibility = 'visible';
     document.querySelector('.intro').style.visibility = 'visible';
     $('.header').hide();
-    loadData();
+    loadDataFocus();
 
 })
 
