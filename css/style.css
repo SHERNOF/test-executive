@@ -462,10 +462,9 @@ ul {
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to left top, rgba(133, 147, 152, 0.2), rgba(40, 48, 72, 0.5)), url(../img/background/default1.jpg);
+  background-image: linear-gradient(to left top, rgba(133, 147, 152, 0.1), rgba(40, 48, 72, 0.1)), url(../img/background/default1.jpg);
   background-size: cover;
   background-position: top;
-  z-index: -3;
   position: relative; }
   .header__logo-box {
     position: absolute;
