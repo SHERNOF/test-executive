@@ -1,11 +1,49 @@
 
-$('#btns-main').click(function(){
+    
+$('#btns-main').click(function(a){
+  // if((document.querySelector('.name').value = 'sherwin') && (document.querySelector('.pword').value = 'test')){
+    let name = document.querySelector('.name').value;
+    let pword = document.querySelector('.pword').value;
+
+    if((name == 'sherwin') && (pword == 'test')){
+      console.log('sherwin')
+      name = "";
+      pword = ""
+
     document.querySelector('.navbar').style.visibility = 'visible';
     document.querySelector('.intro').style.visibility = 'visible';
     $('.header').hide();
     loadDataFocus();
 
+  }else {
+    
+    document.querySelector('.name').style.color = 'red';
+    document.querySelector('.name').value = 'Your user name is wrong';
+    document.querySelector('.pword').style.color = 'red';
+    document.querySelector('.pword').value = 'Your user password is wrong';
+
+  }
+
+  document.querySelector('.name').addEventListener('focus', name => {
+    document.querySelector('.name').value = '';
+    document.querySelector('.name').style.color = 'white';
+    
+  })
+
+  document.querySelector('.pword').addEventListener('focus', pword => {
+    document.querySelector('.pword').style.color = 'white';
+    document.querySelector('.pword').value = '';
+  })
+
+  
+
 })
+
+// $('.name')
+// document.querySelector('.name').onFocus = '';
+// document.querySelector('.pword').value = 'Your user password is wrong';
+
+
 
 // location.loadData
 

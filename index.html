@@ -22,20 +22,42 @@
 
     
 
-    <header class="header">
+    <header class="header" >
         <div class="header__logo-box">
             <a href="#" class="header__circle"></a>
             <img src="img/logo/cog-logo-sm.jpg" alt="logo" class="header__logo">
         </div>
 
-        <div class="header__text-box">
+        <div class="header__text-box" style="visibility: hidden;">
             <h1 class="heading-primary">
                 <span class="heading-primary--main">Cognex</span>
                 <span class="heading-primary--sub">Test Methodologies</span>
                 <span class="heading-primary--sub1">Basic Definition Of Each Test</span>
             </h1>
-            <a href="#" class="btns btns-white btns-animated" id="btns-main">Explore</a>
+            <!-- <a href="#" class="btns btns-white btns-animated" id="btns-main">Explore</a> -->
         </div>
+
+        <!-- <section class="password" > -->
+
+            
+            <form action="" class="password">
+
+                <div class="form__group field">
+                    <input type="input"  class="form__field name" placeholder="Name" name="name" id='name' required />
+                    <label for="name" class="form__label">Name</label>
+                  </div>
+
+                  <div class="form__group field">
+                    <input type="password" class="form__field pword" placeholder="Name" name="name" id='name' required />
+                    <label for="name" class="form__label">Password</label>
+                  </div>
+
+                  <!-- <a href="#" class="btns btns-white btns-animated" id="btns-main">Explore</a> -->
+                  <a href="#" class="btns btns-white btns-animated" id="btns-main">Explore</a>
+                        
+            </form>
+        
+
     </header>
 
 
@@ -88,7 +110,9 @@
 
     <main>
 
-    <section class="intro"  onload="loadData()">
+ 
+
+    <section class="intro" onload="loadData()">
             <div class="intro__box1" >
                 <a id="testDescription" class="btnF" href="#"></a>
                 <ul>
@@ -101,6 +125,8 @@
             </div>    
             
     </section>
+
+    
 
     <section class="failureDisplay" id="test">
        
