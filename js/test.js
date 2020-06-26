@@ -1,4 +1,8 @@
+function scroll (){
+  window.scrollTo(0, 0)
+}
 
+scroll();
     
 $('#btns-main').click(function(a){
   // if((document.querySelector('.name').value = 'sherwin') && (document.querySelector('.pword').value = 'test')){
